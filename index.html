@@ -1,0 +1,16 @@
+<html ng-app="app">
+  <head>
+    <title>ng-fn-webpack-seed</title>
+    <!-- libs: (they havent yet provided proper npm builds ;] ) -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+  </head>
+  <body>
+    <div navbar></div>
+    <div ng-view class="container main">
+    </div>
+    <!-- script bundle: -->
+    <script src="/build/bundle.js"></script>
+  </body>
+</html>

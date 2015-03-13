@@ -1,0 +1,34 @@
+{
+  "name": "ng-fn-webpack-seed",
+  "version": "0.1.0",
+  "homepage": "https://github.com/kasperstorgaard/barkometer",
+  "authors": [
+    "kasperstorgaard <kst@codehouse.com>"
+  ],
+  "description": "An Angular seed with functional programming utilities and webpack",
+  "main": "js/app.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "angular",
+    "webpack",
+    "functional",
+    "programming",
+    "ramda"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-bootstrap": "~0.12.0",
+    "angular": "~1.3.13",
+    "bootstrap": "~3.3.2",
+    "angular-route": "~1.3.13"
+  }
+}
