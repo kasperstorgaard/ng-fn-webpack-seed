@@ -2,11 +2,12 @@
   "name": "ng-fn-webpack-seed",
   "version": "0.1.0",
   "description": "An Angular seed with functional programming utilities and webpack",
-  "main": "js/app.js",
+  "main": "app/app.js",
   "scripts": {
-    "test": "test",
     "watch": "node webpack.hot.server.js",
-    "build": "webpack ./js/app.js bundle.js"
+    "build": "webpack ./app/app.js bundle.js",
+    "unit": "karma start karma.conf.js",
+    "e2e": "protractor e2e-tests/protractor.conf.js"
   },
   "repository": {
     "type": "git",
@@ -26,15 +27,31 @@
   },
   "homepage": "https://github.com/kasperstorgaard/ng-fn-webpack-seed",
   "dependencies": {
+    "angular": "^1.3.14",
+    "angular-route": "^1.3.14"
   },
   "devDependencies": {
+    "angular-mocks": "^1.3.14",
     "bower": "^1.3.12",
+    "chai": "^2.1.1",
     "css-loader": "^0.9.1",
     "express": "^4.11.2",
+    "html-webpack-plugin": "^1.1.0",
+    "jasmine-core": "^2.2.0",
+    "karma": "^0.12.31",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-firefox-launcher": "^0.1.4",
+    "karma-jasmine": "^0.3.5",
+    "karma-junit-reporter": "^0.2.2",
+    "karma-mocha": "^0.1.10",
+    "karma-webpack": "^1.5.0",
     "less": "^2.4.0",
     "less-loader": "^2.0.0",
+    "mocha": "^2.2.1",
     "ng-annotate-loader": "0.0.1",
     "ng-cache-loader": "0.0.8",
+    "protractor": "^1.8.0",
     "style-loader": "^0.8.3",
     "url-loader": "^0.5.5",
     "webpack": "^1.5.3",

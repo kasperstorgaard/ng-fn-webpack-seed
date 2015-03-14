@@ -1,26 +1,33 @@
 var webpack = require('webpack');
+var path = require('path');
+var appRoot = path.join(__dirname, '/app');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'inline-source-map',
   entry: [
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/dev-server',
-    './js/app.js'
+    path.join(appRoot, '/app.js')
   ],
   output: {
-    path: __dirname + '/build/',
+    path: path.join(__dirname, '/build'),
     filename: 'bundle.js',
-    publicPath: '/build/'
+    publicPath: '/build'
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
       ASSETS_PATH: '/assets'
-    })
+    }),
+    new HtmlWebpackPlugin({
+      template: __dirname + '/app/index.html'
+    }),
   ],
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['', '.js'],
+    root: [appRoot]
   },
   module: {
     loaders: [

@@ -1,3 +1,3 @@
 module.exports = function($scope){
-    $scope.test = 'view2';
+    $scope.test = 'view2-test';
 };
