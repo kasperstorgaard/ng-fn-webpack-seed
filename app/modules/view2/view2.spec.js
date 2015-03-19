@@ -1,14 +1,14 @@
 var expect = chai.expect;
 
-var controller = require('./view1.controller.js');
+var controller = require('./view2.controller.js');
 
-describe('app.view1 module', function() {
+describe('app.view2 module', function() {
 
   beforeEach(function(){
-    angular.module('app.view1', [])
-      .controller('View1Controller', controller);
+    angular.module('app.view2', [])
+      .controller('View2Controller', controller);
 
-    angular.mock.module('app.view1');
+    angular.mock.module('app.view2');
   });
 
   describe('controller', function(){
@@ -16,7 +16,7 @@ describe('app.view1 module', function() {
 
     beforeEach(inject(function($controller){
       scope = {};
-      controller = $controller('View1Controller', { $scope: scope });
+      controller = $controller('View2Controller', { $scope: scope });
     }));
 
     describe('intial', function(){
@@ -25,7 +25,7 @@ describe('app.view1 module', function() {
       });
 
       it('should modify the scope', function(){
-        expect(scope.test).to.equal('view1-test');
+        expect(scope.test).to.equal('view2-test');
       });
     });
   });

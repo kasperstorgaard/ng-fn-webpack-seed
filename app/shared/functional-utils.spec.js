@@ -11,18 +11,15 @@ describe('functional utils', function() {
     });
   });
 
-  var obj;
+  var user;
   describe('safeGet', function(){
     beforeEach(function(){
-      obj = [{test:'testval'}];
+      user = { firstName: 'tom'};
     });
 
-    it('should return value when mapped and not null', function() {
-      expect(P.map(F.safeGet('test'))(obj)).to.deep.equal(Maybe.Just(obj));
-    });
-
-    it('should return null when mapped and null', function() {
-      expect(P.map(F.safeGet('nonexist'))(obj)).to.deep.equal(Maybe.Just(null));
+    it('should work with map', function() {
+      var getFirstName = P.compose(P.map(F.add('my name is ')), F.safeGet('firstName'));
+      expect(getFirstName(user)).to.deep.equal(Maybe.Just('my name is tom'));
     });
   });
 });

@@ -24,9 +24,16 @@ var log = function(obj){
   console.log(obj);
   return obj;
 };
+
 var safeGet = R.curry(function(x,o){ return Maybe(o[x]) });
 
+var pluck = R.curry(function(x, o) { return o[x]; });
+
+var add = R.curry(function(x, y) { return x + y; });
+
 module.exports = {
+  add: add,
   log: log,
+  pluck: pluck,
   safeGet: safeGet
 };
