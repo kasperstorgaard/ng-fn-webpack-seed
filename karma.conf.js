@@ -9,9 +9,8 @@ module.exports = function(config){
     resolve: webpackConfig.resolve,
     plugins: [
       new webpack.ResolverPlugin([
-        new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])], ["normal", "loader"]), new webpack.ContextReplacementPlugin(/.*$/, /a^/), new webpack.ProvidePlugin({
-        // 'angular': 'exports?window.angular!bower/angular'
-      }), new webpack.ProvidePlugin({
+        new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])], ["normal", "loader"]),
+        new webpack.ProvidePlugin({
         "contentful": "contentful"
       })
     ],
@@ -27,8 +26,8 @@ module.exports = function(config){
     exclude: [],
     frameworks: ['mocha', 'chai'],
     files: [
-      'bower_components/angular/angular.js',
-      'bower_components/angular-mocks/angular-mocks.js',
+      '../node_modules/angular/angular.min.js',
+      '../node_modules/angular-mocks/angular-mocks.js',
       '**/*.spec.js'
     ],
     logLevel: config.LOG_INFO,
