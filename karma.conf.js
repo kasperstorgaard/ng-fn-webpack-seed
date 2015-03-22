@@ -7,13 +7,6 @@ module.exports = function(config){
   var karmaWebpack = {
     module: webpackConfig.module,
     resolve: webpackConfig.resolve,
-    plugins: [
-      new webpack.ResolverPlugin([
-        new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])], ["normal", "loader"]),
-        new webpack.ProvidePlugin({
-        "contentful": "contentful"
-      })
-    ],
     devtool: 'eval',
     cache: true
   };

@@ -7,8 +7,9 @@ var angular = require('angular');
 //initialize
 var app = angular.module('app', [
   require('angular-route'),
-  require('./modules/view1/index.js').name,
-  require('./modules/view2/index.js').name
+  require('./shared').name,
+  require('./modules/view1').name,
+  require('./modules/view2').name
 ]);
 
 require('./app.routes.js')(app);
