@@ -7,14 +7,6 @@ module.exports = function(config){
   var karmaWebpack = {
     module: webpackConfig.module,
     resolve: webpackConfig.resolve,
-    plugins: [
-      new webpack.ResolverPlugin([
-        new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])], ["normal", "loader"]), new webpack.ContextReplacementPlugin(/.*$/, /a^/), new webpack.ProvidePlugin({
-        // 'angular': 'exports?window.angular!bower/angular'
-      }), new webpack.ProvidePlugin({
-        "contentful": "contentful"
-      })
-    ],
     devtool: 'eval',
     cache: true
   };
@@ -27,9 +19,9 @@ module.exports = function(config){
     exclude: [],
     frameworks: ['mocha', 'chai'],
     files: [
-      'bower_components/angular/angular.js',
-      'bower_components/angular-mocks/angular-mocks.js',
-      '**/*.spec.js'
+      '../node_modules/angular/angular.min.js',
+      '../node_modules/angular-mocks/angular-mocks.js',
+      '**/*.spec.coffee'
     ],
     logLevel: config.LOG_INFO,
     plugins : [
@@ -40,7 +32,7 @@ module.exports = function(config){
     ],
     port: 9876,
     preprocessors: {
-      '**/*.spec.js': ['webpack']
+      '**/*.spec.coffee': ['webpack']
     },
     reporters: ['progress'],
     webpack: karmaWebpack

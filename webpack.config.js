@@ -4,7 +4,7 @@ var appRoot = path.join(__dirname, '/app');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  devtool: 'inline-source-map',
+  devtool: 'eval',
   entry: [
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/dev-server',
@@ -32,6 +32,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.html$/, loaders: ['ng-cache-loader'] },
+      { test: /\.coffee$/, loaders: ['coffee-loader'] },
       { test: /app\/.*\.js$/, loaders: ['ng-annotate']},
       { test: /\.less$/, loaders: ['style-loader','css-loader','less-loader'] },
       { test: /\.css$/, loaders: ['style-loader','css-loader'] },
