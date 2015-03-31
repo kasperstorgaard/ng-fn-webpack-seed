@@ -1,7 +1,7 @@
 {
   "name": "ng-fn-webpack-seed",
-  "version": "0.1.0",
-  "homepage": "https://github.com/kasperstorgaard/barkometer",
+  "version": "1.0.0",
+  "homepage": "https://github.com/kasperstorgaard/ng-fn-webpack-seed",
   "authors": [
     "kasperstorgaard <kst@codehouse.com>"
   ],
