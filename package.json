@@ -1,6 +1,6 @@
 {
   "name": "ng-fn-webpack-seed",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "An Angular seed with functional programming utilities and webpack",
   "main": "app/app.js",
   "scripts": {
